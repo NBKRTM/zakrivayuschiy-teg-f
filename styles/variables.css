@@ -1,1 +1,17 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  /* Шрифты */
+  --main-font: Inter-Variable, sans-serif;
+  --accent-font: PressStart2P, Monospace;
+
+  --main-font-weight: 400;
+  --bold-main-font-weight: 700;
+  --main-font-size: 18px;
+  --header-title-font-size: 65px;
+  --header-subtitle-font-size: 23px;
+
+  /* Цвета */
+  --main-font-color: rgba(0, 0, 0, 1);
+  --bg-image: rgba(255, 255, 255, 1);
+  --text-color: rgba(0, 0, 0, 1);
+}
