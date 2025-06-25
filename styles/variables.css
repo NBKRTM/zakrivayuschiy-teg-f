@@ -42,6 +42,5 @@
   --animation-fill-color: red;
 
   --desktop-stretch: clamp(375px, 100%, 700px);
-  --mobile-stretch: 100%
-  
+  --mobile-stretch: 100%;
 }
