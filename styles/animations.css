@@ -12,7 +12,7 @@
 
 /* animations -----------------------------------------------*/
 @keyframes scale {
-  from { 
+  from {
     transform: scale(1);
   }
 
@@ -22,7 +22,7 @@
 }
 
 @keyframes appearing {
-  from {
+from {
     opacity: 1;
   }
 

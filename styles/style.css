@@ -39,7 +39,7 @@
   font-size: var(--title-font-size);
 }
 
-.header__subtitle { 
+.header__subtitle {
   font-size: var(--header-subtitle-font-size);
   text-transform: uppercase;
 }
