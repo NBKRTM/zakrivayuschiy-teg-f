@@ -1,0 +1,43 @@
+.dramatic-shadow {
+    filter: drop-shadow(10px 10px 8px rgba(0, 0, 0, 0.7));
+}
+
+.nostalgic-sepia {
+    filter: sepia(80%);
+}
+
+.cold-reality {
+    filter: brightness(90%) contrast(110%) hue-rotate(190deg);
+}
+
+.dreamy-soft {
+    filter: blur(1px) brightness(110%) saturate(120%);
+}
+
+.high-contrast {
+    filter: contrast(150%) brightness(90%);
+}
+
+.dark-mystery {
+    filter: brightness(70%) saturate(50%);
+}
+
+.vibrant-joy {
+    filter: saturate(180%) brightness(105%) contrast(105%);
+}
+
+.vintage-grain {
+    filter: sepia(50%) contrast(120%) brightness(90%) grayscale(20%);
+    position: relative;
+}
+
+.vintage-grain::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.5) 100%);
+    pointer-events: none;
+}
