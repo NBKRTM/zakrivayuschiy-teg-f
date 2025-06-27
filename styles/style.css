@@ -8,6 +8,7 @@
   color: var(--main-font-color);
   font-variation-settings: "wght" var(--main-font-weight, 400);
   background-image: var(--bg-image);
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -23,7 +24,7 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  min-block-size: 368px;
+  padding-block: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem);
   margin: 100px;
   border: var(--border-main);
   gap: 20px;
@@ -32,7 +33,6 @@
 .header__title,
 .header__subtitle {
   font-family: var(--accent-font);
-  /* font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);; */
 }
 
 .header__title {
@@ -76,10 +76,16 @@
   top: 25px;
   right: 25px;
   z-index: 2;
+  opacity: 50%;
   color: var(--main-font-color);
   font-family: var(--accent-font);
-  font-size: 14px;
+  font-size: var(--font-size-s, 14px);
   mix-blend-mode: hard-light;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+    1px  1px 0 #fff;
 }
 
 @supports (text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff) {
@@ -174,24 +180,23 @@
 }
 
 /* button --------------------------------------------------------- */
-.main-button,
-.card__icon-button,
-.save-button {
+
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--button-bg-color, #fff);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-family: var(--accent-font);
+  font-size: var(--font-size-s, 14px);
+  font-weight: var(--main-font-weight, 400);
+  background-color: transparent;
+  border: 2px solid currentColor;
   transition: box-shadow 0.3s ease, outline 0.3s ease, border 0.3s ease;
 }
 
-.main-button {
-  position: relative;
-  border: 2px solid currentColor;
-  overflow: hidden;
-  font-family: var(--accent-font);
-}
-
-.main-button::before {
+.button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -205,38 +210,28 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.main-button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-.main-button:focus,
-.card__icon-button:focus {
+.button:focus {
   outline: none;
 }
 
-.main-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 #000;
   border-color: var(--border-color, #000);
 }
 
-.card__icon-button:focus-visible {
-  border: 2px solid #000;
+.button__text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  mix-blend-mode: difference;
 }
 
-.card__icon-button {
-  padding: 0;
-  border: 2px solid transparent;
-}
-
-.card__like-button,
-.save-button {
-  background-color: transparent;
-  cursor: pointer;
-  font-size: 14px;
-}
-
+/* Модификаторы кнопок */
 .card__like-button {
-  font-weight: 400;
   inline-size: 130px;
   block-size: 38px;
   padding: 0;
@@ -257,18 +252,28 @@
   mix-blend-mode: difference;
 }
 
-.button__text {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  mix-blend-mode: difference;
-}
-
 .modal-button {
   margin-block-start: 30px;
   padding-block: 13px;
   text-transform: uppercase;
   inline-size: 100%;
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  border: 2px solid transparent;
+  background-color: var(--button-bg-color, #fff);
+  transition: box-shadow 0.3s ease, outline 0.3s ease, border 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid #000;
 }
 
 /* media --------------------------------------------------------- */
@@ -282,7 +287,23 @@
   }
 
   .header__subtitle {
-    font-size: 14px;
+    font-size: var(--font-size-s, 14px);
     text-transform: uppercase;
+  }
+
+  .button {
+    flex-direction: column;
+  }
+
+  .card__image-label {
+    right: 13px;
+  }
+  .save-button svg {
+    block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .save-button-div {
+    max-inline-size: 306px;
   }
 }
