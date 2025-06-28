@@ -137,7 +137,7 @@
   z-index: 3;
   display: block;
   inline-size: 353px;
-  margin: auto;
+  border:none;
   padding: 30px;
   font-family: var(--accent-font), fantasy;
   font-size: var(--font-size, 14px);
@@ -170,12 +170,13 @@
 
 .modal__content svg {
   inline-size: 39px;
+  flex-shrink: 0;
 }
 
 .modal-dialog__text {
-  font-size: 12px;
+  font-size: var(--font-size, 14px);
   line-height: 1.5;
-  max-inline-size: 180px;
+  max-inline-size: 234px;
   text-align: left;
 }
 
@@ -256,7 +257,8 @@
   margin-block-start: 30px;
   padding-block: 13px;
   text-transform: uppercase;
-  inline-size: 100%;
+  inline-size: 293px;
+  block-size: 38px;
 }
 
 .card__icon-button {
@@ -305,5 +307,18 @@
 
   .save-button-div {
     max-inline-size: 306px;
+  }
+
+  .modal {
+    padding: 30px 42px;
+    inline-size: 341px;
+  }
+
+  .modal-dialog__text {
+    max-inline-size: 198px;
+  }
+
+  .modal-button {
+    inline-size: 257px;
   }
 }
